@@ -1,16 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from "@emotion/react";
+import { CssBaseline } from "@mui/material";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { themeLight } from "./theme";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <React.Fragment>
+    <CssBaseline />
+    <ThemeProvider theme={themeLight}>
+      <App />
+    </ThemeProvider>
+  </React.Fragment>
 );
 
 // If you want to start measuring performance in your app, pass a function
